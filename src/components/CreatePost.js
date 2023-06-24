@@ -5,6 +5,7 @@ const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
+
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
@@ -21,6 +22,12 @@ const CreatePost = () => {
       await firestore.collection('posts').add({
         title,
         body,
+        'likes' : 0,
+        'dislikes' : 0,
+        'subreddit' : '',
+        'comments' : 0,
+        'img' : ''
+
       });
 
       console.log('Post created successfully!');
