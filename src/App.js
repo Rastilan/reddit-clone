@@ -13,6 +13,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/reddit-clone" element={<Home />} />
         <Route path="/posts/:postId" element={<PostDetails />} />
         <Route path="/create-post" element={<CreatePost />} />
         <Route path="/login" element={<Login />} />

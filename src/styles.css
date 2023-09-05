@@ -33,32 +33,7 @@ body {
     margin-left: 20px;
   }
   
-  /* Navigation */
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333333;
-    padding: 10px;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar li {
-    margin-right: 10px;
-  }
-  
-  .navbar a {
-    color: #ffffff;
-    text-decoration: none;
-  }
+
   
   /* Post List */
   
@@ -70,8 +45,8 @@ body {
     display:flex;
     background-color: #f9f9f9;
     border: 1px solid #dddddd;
-    padding: 10px;
-    margin: 20px;
+    padding: 0px 10px 0px;
+    margin: 0px 20px 0px;
   }
   
   .post-item h3 {
@@ -173,15 +148,9 @@ body {
     padding: 10px;
     margin: 20px;
   }
-  .create-post{
-    display: flex;
-    background-color: #f9f9f9;
-    border: 1px solid #dddddd;
-    padding: 10px;
-    margin: 20px;
-    flex-grow: 1;
   
-  }
+
+
   .sort-options{
     background-color: #f9f9f9;
     border: 1px solid #dddddd;
@@ -212,6 +181,14 @@ body {
     background-color: #005aa6;
   }
 
+  .create-post {
+    display: flex;
+    background-color: #f9f9f9;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    margin: 20px;
+  }
+  
   .create-post-box{
     flex-grow: 1;
     padding: 8px;

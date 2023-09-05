@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { firestore } from './Firebase.js'; // Assuming you have a 'firebase.js' file exporting the Firestore instance
-
+import { firestore, auth } from './Firebase.js'; // Assuming you have a 'firebase.js' file exporting the Firestore instance
+import Nav from '../components/Nav.js';
 const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-
-
+  const currentUser = auth.currentUser;
+  console.log(currentUser);
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
@@ -26,7 +26,8 @@ const CreatePost = () => {
         'dislikes' : 0,
         'subreddit' : '',
         'comments' : 0,
-        'img' : ''
+        'img' : '',
+        'poster': currentUser,
 
       });
 
@@ -40,20 +41,23 @@ const CreatePost = () => {
   };
 
   return (
-    <div>
-      <h1>Create Post</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title:</label>
-          <input type="text" value={title} onChange={handleTitleChange} />
-        </div>
-        <div>
-          <label>Body:</label>
-          <textarea value={body} onChange={handleBodyChange} />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <>
+    <Nav handleLogout={handleLogout} />
+      <div>
+        <h1>Create Post</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Title:</label>
+            <input type="text" value={title} onChange={handleTitleChange} />
+          </div>
+          <div>
+            <label>Body:</label>
+            <textarea value={body} onChange={handleBodyChange} />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      </>
   );
 };
 
