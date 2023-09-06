@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { firestore, auth } from './Firebase';
+import { Link } from 'react-router-dom';
+import { firestore } from './Firebase';
 import '../styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-regular-svg-icons';
@@ -10,7 +10,7 @@ import { faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid } from
 import Nav from './Nav';
 const Home = () => {
   const [posts, setPosts] = useState([]);
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
     // Fetch posts from Firebase Firestore
@@ -92,18 +92,11 @@ const Home = () => {
     }
   };
 
-  const handleLogout = () => {
-    auth.signOut().then(() => {
-      // Redirect or perform additional actions upon successful logout
-      navigate('/');
-    }).catch((error) => {
-      console.log('Error logging out:', error);
-    });
-  };
+
 
   return (
     <div className="container">
-      <Nav handleLogout={handleLogout} />
+      <Nav />
 
       <div className="page-content">
         <div className="left-side">

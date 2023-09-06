@@ -1,0 +1,76 @@
+/* CreatePost.css */
+
+/* Center the content vertically and horizontally */
+.create-post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Adjust as needed */
+    padding: 20px;
+    width: 40vw; /* sets sixze of container */
+    margin: 0 auto; /* Center horizontally */
+    
+
+  }
+  
+  /* Styles the post type buttons ex: Post/Images/Link/Poll */
+  .post-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: stretch;
+    width: 100%;
+    
+  }
+
+  .post-options button {
+    width:100%;
+  }
+  
+  /* Style the post title input */
+  .post-title {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex; /* Use flex layout */
+    align-items: center; /* Vertically center the elements */
+  }
+  .post-title label {
+    margin-right: 10px; /* Add some spacing between label and input */
+    }
+
+    .post-title input {
+        flex: 1; /* Allow the input to take up the remaining space */
+        width: auto; /* Adjust as needed */
+    }
+  
+  /* Style the post body textarea */
+  .post-body {
+    margin-bottom: 10px;
+    min-height: 150px; /* Adjust as needed */
+  }
+  
+  /* Style the post formatting controls (bold, italic, link, strikethrough) */
+  .post-controls {
+    margin-bottom: 10px;
+    /* Style individual formatting controls as needed */
+  }
+  
+  /* Style the post flairs (checkboxes or other input elements) */
+  .post-flairs {
+    margin-bottom: 10px;
+    /* Style flair options as needed */
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    background-color: #0079d3; /* Example button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    /* Add more button styles as needed */
+  }
+  
+  /* Add any other custom styles you need for your component */
+  

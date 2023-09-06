@@ -1,16 +1,26 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { auth, storage, firestore } from './Firebase';
+import { useNavigate, Link } from 'react-router-dom';
+import { auth, firestore } from './Firebase';
 import '../css/Nav.css';
 import redditIcon from '../imgs/Reddit-Logo.png';
 
 
-const Nav = ({handleLogout}) => {
+const Nav = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [userData, setUserData] = useState(null);
+    const navigate = useNavigate();
 
+
+    const handleLogout = () => {
+        auth.signOut().then(() => {
+          // Redirect or perform additional actions upon successful logout
+          navigate('/');
+        }).catch((error) => {
+          console.log('Error logging out:', error);
+        });
+      };
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
             if(user) {
@@ -106,7 +116,7 @@ const Nav = ({handleLogout}) => {
                     <img className='photoURL' src={auth.currentUser.photoURL} alt="" />
                     {auth.currentUser.displayName}
                     {userData && <div>Karma: {userData.karma}</div>}
-                    <button onClick={handleLogout}>Logout</button>
+                    <button onClick={() => handleLogout()}>Logout</button>
                 </li>
                 ) : (
                 <>
