@@ -48,8 +48,20 @@
   .post-body {
     margin-bottom: 10px;
     min-height: 150px; /* Adjust as needed */
+    
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center; /* Vertically center the elements */
   }
   
+  .post-body textarea {
+    display: flex;
+    width: auto;
+    flex: 1;
+    height:auto;
+    min-height: 100px;
+  }
   /* Style the post formatting controls (bold, italic, link, strikethrough) */
   .post-controls {
     margin-bottom: 10px;
